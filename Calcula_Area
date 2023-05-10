@@ -1,0 +1,159 @@
+#Pintando el techo
+#5 litros de pintura dan para pintar 100 metros cuadrados de techo.
+#Teniendo esto en cuenta haz un programa que diga cuantos botes de 5 litros de pintura hay que comprar
+#para pintar un techo de anchura y profundidad informada por el usuario (en metros). Devuelve el número
+#de botes suficiente y por supuesto en números enteros.
+
+#Defino 3 funciones: 1 para habitaciones cuadradas, otra para habitaciones circulares y otra para habitaciones en L:
+
+def habl():
+    while True:
+        prof1 = input("Indica la profundidad 1 en metros: ")
+        try:
+            prof1 = float(prof1)
+            if prof1 >=0:
+                break
+            else:
+                raise ValueError("Debes untroducir un número entero o decimal positivo con el teclado numérico")
+        except ValueError:
+            print("Debes untroducir un número entero o decimal con el teclado numérico")
+            
+    while True:
+        anch1 = input("Indica la anchura 1 en metros: ")
+        try:
+            anch1 = float(anch1)
+            if anch1 >=0:
+                break
+            else:
+                raise ValueError("Debes untroducir un número entero o decimal positivo con el teclado numérico")
+        except ValueError:
+            print("Debes untroducir un número entero o decimal con el teclado numérico")
+            
+    while True:
+        prof2 = input("Indica la profundidad 2 en metros: ")
+        try:
+            prof2 = float(prof2)
+            if prof2 >=0:
+                break
+            else:
+                raise ValueError("Debes untroducir un número entero o decimal positivo con el teclado numérico")
+        except ValueError:
+            print("Debes untroducir un número entero o decimal con el teclado numérico")
+            
+    while True:
+        anch2 = input("Introduce la anchura 2 en metros: ")
+        try:
+            anch2 = float(anch2)
+            if anch2 >=0:
+                break
+            else:
+                raise ValueError("Debes untroducir un número entero o decimal positivo con el teclado numérico")
+        except ValueError:
+            print("Debes untroducir un número entero o decimal con el teclado numérico")
+
+        
+            
+            
+    import math
+    
+    
+    surface1 = math.ceil(prof1 * anch1)
+    surface2 = math.ceil(prof2 * anch2)
+    surface = surface1 + surface2
+    LITROS = math.ceil((surface * 5)/100)
+    bidones = math.ceil(LITROS/5)
+    rbidones = math.ceil(bidones)
+
+    print("Necestitarás {} litros para pintar {} metros cuadrados de techo. \nDebes comprar {} botes de pintura.".format(LITROS, surface, rbidones))
+            
+            
+                
+                
+                
+        
+        
+        
+
+def habcir():
+    while True:
+        diam = input("Indica el diámetro en metros: ")
+        try:
+            diam = float(diam)
+            if diam >=0:
+                break
+            else:
+                raise ValueError("Debes untroducir un número entero o decimal positivo con el teclado numérico")
+        except ValueError:
+            print("Debes untroducir un número entero o decimal con el teclado numérico")
+    r = diam/2
+    
+    import math
+    surface = math.ceil(3.14 * (r * r))
+    LITROS = math.ceil((surface * 5)/100)
+    bidones = math.ceil(LITROS/5)
+    rbidones = math.ceil(bidones)
+    
+    print("Necestitarás {} litros para pintar {} metros cuadrados de techo. \nDebes comprar {} botes de pintura.".format(LITROS, surface, rbidones))    
+                
+    
+    
+    
+    
+
+#defino funcion para habitacion cuadrada    
+def habcu():
+    while True:
+        anch = input("indica la anchura en metros: ")
+        try:
+            anch = float(anch)
+            if anch >=0:
+                break
+            else:
+                raise ValueError("Debes untroducir un número entero o decimal positivo con el teclado numérico")
+            break
+        except ValueError:
+            print("Debes untroducir un número entero o decimal con el teclado numérico")
+        
+    while True:
+        prof = input("Indica la profundida en metros: ")
+        try:
+            prof = float(prof)
+            if prof >=0:
+                break
+            else:
+                raise ValueError("Debes untroducir un número entero o decimal positivo con el teclado numérico")
+            break
+        except ValueError:
+            print("Debes untroducir un número entero o decimal con el teclado numérico")
+    else:
+        print("Indica una forma de habitación correcta (Circular o Cuadrada): ")
+        
+    import math
+    surface = math.ceil(prof * anch)
+    LITROS = math.ceil((surface * 5)/100)
+    bidones = math.ceil(LITROS/5)
+    rbidones = math.ceil(bidones)
+
+    print("Necestitarás {} litros para pintar {} metros cuadrados de techo. \nDebes comprar {} botes de pintura.".format(LITROS, surface, rbidones))
+    
+
+
+#pido datos del tipo de habitacion al usuario
+while True:
+    try:
+        forma = input("¿Qué forma tiene la habitación? Cuadrada (Cu), circular (Ci) o En ele (L) ")
+        forma = forma.upper()
+        if forma == "CU":
+            habcu()
+        elif forma == "CI":
+            habcir()
+        elif forma == "L":
+            habl()
+    except:
+        print("Indica una forma de habitación correcta (Circular o Cuadrada o en Ele): ")
+        #forma = input("¿Qué forma tiene la habitación? Cuadrada (Cu) o circular (Ci) o en Ele (L) ")
+        #forma = forma.upper()
+
+
+
+
